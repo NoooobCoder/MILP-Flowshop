@@ -1,0 +1,61 @@
+set jobs := Vanilla ButterScotch Chocolate Mango;
+
+set machines := Pasteurizer Mixer Packing;
+
+param T:				Pasteurizer		Mixer	  Packing := 
+		Vanilla   		19   			10   	  15	    
+		ButterScotch    17   			20   	  19    
+		Chocolate       15   			17   	  20    
+		Mango 			10   			22   	  20 ;
+
+param M := 200 ;
+
+param c :=
+	Vanilla Vanilla Pasteurizer 0
+	Vanilla ButterScotch Pasteurizer 1
+	Vanilla Chocolate Pasteurizer 2
+	Vanilla Mango Pasteurizer 3
+	ButterScotch Vanilla Pasteurizer 4
+	ButterScotch ButterScotch Pasteurizer 0
+	ButterScotch Chocolate Pasteurizer 2
+	ButterScotch Mango Pasteurizer 3
+	Chocolate Vanilla Pasteurizer 4
+	Chocolate ButterScotch Pasteurizer 1
+	Chocolate Chocolate Pasteurizer 0
+	Chocolate Mango Pasteurizer 3
+	Mango Vanilla Pasteurizer 4
+	Mango ButterScotch Pasteurizer 2
+	Mango Chocolate Pasteurizer 2
+	Mango Mango Pasteurizer 0
+	Vanilla Vanilla Mixer 0
+	Vanilla ButterScotch Mixer 1
+	Vanilla Chocolate Mixer 2
+	Vanilla Mango Mixer 3
+	ButterScotch Vanilla Mixer 4
+	ButterScotch ButterScotch Mixer 0
+	ButterScotch Chocolate Mixer 3
+	ButterScotch Mango Mixer 2
+	Chocolate Vanilla Mixer 1
+	Chocolate ButterScotch Mixer 4
+	Chocolate Chocolate Mixer 0
+	Chocolate Mango Mixer 3
+	Mango Vanilla Mixer 4
+	Mango ButterScotch Mixer 2
+	Mango Chocolate Mixer 1
+	Mango Mango Mixer 0
+	Vanilla Vanilla Packing 0
+	Vanilla ButterScotch Packing 1
+	Vanilla Chocolate Packing 3
+	Vanilla Mango Packing 4
+	ButterScotch Vanilla Packing 2
+	ButterScotch ButterScotch Packing 0
+	ButterScotch Chocolate Packing 1
+	ButterScotch Mango Packing 1
+	Chocolate Vanilla Packing 2
+	Chocolate ButterScotch Packing 4
+	Chocolate Chocolate Packing 0
+	Chocolate Mango Packing 2
+	Mango Vanilla Packing 2
+	Mango ButterScotch Packing 3
+	Mango Chocolate Packing 1
+	Mango Mango Packing 0  ;
