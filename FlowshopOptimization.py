@@ -7,6 +7,7 @@ Created on Fri Nov 13 13:55:06 2020
 
 from pyomo.environ import *
 from constraints import *
+from plotting import plot_gantt
 
 m = AbstractModel()
 m.jobs = Set(ordered=True)
@@ -35,6 +36,8 @@ print("Solver status:",result.solver.status)
 
 print("\nResult:")
 print("  Optimal Makespan =",m1.obj())
+
+plot_gantt(m1)
 
 
 
