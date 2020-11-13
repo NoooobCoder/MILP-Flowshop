@@ -27,8 +27,14 @@ m1.prec_1_cons = Constraint(m1.jobs,m1.jobs,m1.machines,rule=prec_1)
 m1.prec_2_cons = Constraint(m1.jobs,m1.jobs,m1.machines,rule=prec_2)
 m1.Q_cons = Constraint(m1.jobs,rule=Q)
 
+opt = SolverFactory('cbc')
+result = opt.solve(m1,tee=False)
 
+print("Solver termination condition:",result.solver.termination_condition)
+print("Solver status:",result.solver.status)
 
+print("\nResult:")
+print("  Optimal Makespan =",m1.obj())
 
 
 
